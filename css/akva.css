@@ -180,9 +180,8 @@ p cite {
 /* general */
 #akva-grid {
 	position: absolute;
-	min-width: 968px;
-	max-width: 1084px;
-	width: 960px;
+	min-width: 320px;
+	max-width: 960px;
 	left: 0;
 	right: 0;
 	top: 0;
@@ -211,12 +210,12 @@ p cite {
 
 }
 .akva-cols li div {
-	outline: 1px solid #7195bd;
+	/*outline: 1px solid #7195bd;*/
+	background: rgba(0, 50, 100, .2);
 	margin: 0 4px -999999px;
 	padding-bottom: 999999px;
 }
 .akva-cols li {
-	display: inline-block;
 	opacity: 1;
 	margin: 0;
 	position: relative;
@@ -248,8 +247,30 @@ p cite {
  * Grid
 ----------------------------*/
 
-.akva-cols { display:table;  margin:0 auto }
-.akva-cols li { display:table-cell; vertical-align:top; padding:0 }
+.akva-cols { 
+
+	/* Table layout 
+	display:table;  
+	margin:0 auto; */
+	
+	/* Flexible box model */
+	-webkit-display: box;
+	-webkit-box-align: stretch;
+	-webkit-box-orient: horizontal;
+	display: -webkit-box;
+	
+}
+
+.akva-cols li { 
+
+	/* Table layout 
+	display: table-cell;
+	vertical-align: top;
+	padding: 0; */
+	
+	/* Flexible box model */
+	-webkit-box-flex: 1;
+}
 
 /* 
 li:first-of-type:nth-last-of-type(1) {

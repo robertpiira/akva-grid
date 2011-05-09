@@ -181,7 +181,7 @@ p cite {
 #akva-grid {
 	position: absolute;
 	min-width: 320px;
-	max-width: 960px;
+	max-width: 968px;
 	left: 0;
 	right: 0;
 	top: 0;
@@ -212,7 +212,7 @@ p cite {
 .akva-cols li div {
 	/*outline: 1px solid #7195bd;*/
 	background: rgba(0, 50, 100, .2);
-	margin: 0 4px -999999px;
+	margin: 0 4% -999999px;
 	padding-bottom: 999999px;
 }
 .akva-cols li {
@@ -243,6 +243,10 @@ p cite {
 	padding: 5px;
 }
 
+img,embed {
+	max-width: 100%;
+}
+
 /*
  * Grid
 ----------------------------*/
@@ -254,11 +258,12 @@ p cite {
 	margin:0 auto; */
 	
 	/* Flexible box model */
-	-webkit-display: box;
+	display: -webkit-box;
+	display: -moz-box;
 	-webkit-box-align: stretch;
 	-webkit-box-orient: horizontal;
-	display: -webkit-box;
-	
+	-moz-box-align: stretch;
+	-moz-box-orient: horizontal;
 }
 
 .akva-cols li { 
@@ -270,6 +275,12 @@ p cite {
 	
 	/* Flexible box model */
 	-webkit-box-flex: 1;
+	-moz-box-flex: 1;
+	margin: 0 1%;
+}
+
+.akva-cols li div {
+	margin: 0;
 }
 
 /* 

@@ -1,0 +1,318 @@
+
+/*
+
+                                                                          
+             _/                              _/_/_/            _/        _/ *
+    _/_/_/  _/  _/  _/      _/    _/_/_/  _/        _/  _/_/        _/_/_/    
+ _/    _/  _/_/    _/      _/  _/    _/  _/  _/_/  _/_/      _/  _/    _/     
+_/    _/  _/  _/    _/  _/    _/    _/  _/    _/  _/        _/  _/    _/      
+ _/_/_/  _/    _/    _/        _/_/_/    _/_/_/  _/        _/    _/_/_/       
+                                                                                                                  
+
+---------------------------- *aquaGrid 1.0 -----------------------------
+
+
+TODO:
+
+Prio:
+js - input for dynamic line-height for basline grid
+js - input for size of gutters (px / %)
+js - fixing auto height issues
+js - build grid controller form (and make it hidable)
+
+More:
+js - set default grid/baseline values
+js - opacity via draggable input
+js - custom width, max-width, min-width
+js/css - able to choose bg color on cols or the standard outlines. rgba(0, 50, 100, .2)
+
+Maybe:
+js - set color of grid lines
+
+Wound be nice:
+css - height of grid to cover all content
+css/js - media query support
+
+Almost there:
+html5 - local storage (save settings)
+js - check document height and apply that to grid height
+
+Misc: 
+css/html/js- browser support?
+
+Pointers:
+- check out serializeArray for save settings etc.
+
+------------------------------------------------------------------------
+
+*/
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/* content tests */
+body {
+  font-size: 16px;
+  font-family: serif;
+  padding: 0 20px;
+}
+
+p {
+  font-size: 1em; /* 16px */
+  line-height: 1.375em; /* 22px */
+  margin: 0 0 1.375em 0;
+}
+/* 24px - The quick brown fox jumps over the lazy dog */
+h1, .h1 {
+  font-size: 1.5em; /* 24px */
+  line-height: 1.8333em; /* 44px */
+  margin-top: 0.9167em;
+  margin-bottom: 0em;
+}
+/* 22px - The quick brown fox jumps over the lazy dog */
+h2 {
+  font-size: 1.375em; /* 22px */
+  line-height: 1em; /* 22px */
+  margin-top: 1em;
+  margin-bottom: 0em;
+}
+/* 20px - The quick brown fox jumps over the lazy dog */
+.class-for-20px {
+  font-size: 1.25em; /* 20px */
+  line-height: 1.1em; /* 22px */
+  margin-top: 1.1em;
+  margin-bottom: 0em;
+}
+/* 18px - The quick brown fox jumps over the lazy dog */
+.class-for-18px {
+  font-size: 1.125em; /* 18px */
+  line-height: 1.2222em; /* 22px */
+  margin-top: 1.2222em;
+  margin-bottom: 0em;
+}
+/* 16px - The quick brown fox jumps over the lazy dog */
+.class-for-16px {
+  font-size: 1em; /* 16px */
+  line-height: 1.375em; /* 22px */
+  margin-top: 1.375em;
+  margin-bottom: 0em;
+}
+/* 14px - The quick brown fox jumps over the lazy dog */
+.class-for-14px {
+  font-size: 0.875em; /* 14px */
+  line-height: 1.5714em; /* 22px */
+  margin-top: 1.5714em;
+  margin-bottom: 0em;
+}
+label {
+	display: block;
+	font-size: .75em;
+}
+
+.testcol-parent {
+	width: 960px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.testcol {
+	width: 47.5%;
+	float: left;
+	padding: 0 1.3%;
+}
+.testcol2 {
+	float: right;
+	width: 30.7%;
+	padding: 0 1.5% 0 0;
+}
+header {
+	display: none;
+	background: rgba(0,0,0,.2);
+	padding: 0 11% 22px;
+	margin-bottom: 22px;
+}
+header h1 {
+	margin: 0;
+	line-height: 22px;
+	padding-top: 44px;
+}
+header p {
+	margin: 0;
+}
+blockquote {
+	text-align: center;
+	font-style: italic;
+}
+
+p img {
+	float: left;
+	max-width: 46%;
+	margin: 0 10% 0 0;
+}
+
+blockquote p {
+	margin: 0 18%;
+}
+
+p cite {
+	display: inline-block;
+	width: 100%;
+	text-align: right;
+	color: #666;
+}
+
+@media screen and (max-width: 800px) {
+  
+	p img {
+		float: none;
+		max-width: 100%;
+		margin: 0;
+	}
+}
+
+
+
+/*
+ * Akva Style
+----------------------------*/
+
+/* general */
+#akva-grid {
+	position: absolute;
+	min-width: 968px;
+	max-width: 1084px;
+	width: 960px;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: 0 auto;
+	z-index: -1;
+	outline: 1px solid #7195bd;
+	overflow: hidden;
+}
+#akva-grid ul {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+/* cols */
+.akva-cols {
+	position: relative;
+	overflow: hidden;
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	height: 100%;
+
+}
+.akva-cols li div {
+	outline: 1px solid #7195bd;
+	margin: 0 4px -999999px;
+	padding-bottom: 999999px;
+}
+.akva-cols li {
+	display: inline-block;
+	opacity: 1;
+	margin: 0;
+	position: relative;
+	z-index: 1000;
+	height: 100%;
+	min-height: 100%;
+}
+
+/* baseline */
+.akva-baseline {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	overflow: hidden;
+}
+.akva-baseline li {
+	border-bottom: 1px dotted #7195bd;
+}
+
+/* panel */
+#akva-panel {
+	position: absolute;
+	top: 0;
+	padding: 5px;
+}
+
+/*
+ * Grid
+----------------------------*/
+
+.akva-cols { display:table;  margin:0 auto }
+.akva-cols li { display:table-cell; vertical-align:top; padding:0 }
+
+/* 
+li:first-of-type:nth-last-of-type(1) {
+	width: 100%;
+}
+
+li:first-of-type:nth-last-of-type(2),
+li:first-of-type:nth-last-of-type(2) ~ li {
+	width: 50%;
+}
+
+li:first-of-type:nth-last-of-type(3),
+li:first-of-type:nth-last-of-type(3) ~ li {
+	width: 33.3333%;
+}
+
+li:first-of-type:nth-last-of-type(4),
+li:first-of-type:nth-last-of-type(4) ~ li {
+	width: 25%;
+}
+
+li:first-of-type:nth-last-of-type(5),
+li:first-of-type:nth-last-of-type(5) ~ li {
+	width: 20%;
+}
+
+li:first-of-type:nth-last-of-type(6),
+li:first-of-type:nth-last-of-type(6) ~ li {
+	width: 16.6666%;
+}
+
+li:first-of-type:nth-last-of-type(7),
+li:first-of-type:nth-last-of-type(7) ~ li {
+	width: 14.2857%;
+}
+
+li:first-of-type:nth-last-of-type(8),
+li:first-of-type:nth-last-of-type(8) ~ li {
+	width: 12.5%;
+}
+
+li:first-of-type:nth-last-of-type(9),
+li:first-of-type:nth-last-of-type(9) ~ li {
+	width: 11.1111%;
+}
+
+li:first-of-type:nth-last-of-type(10),
+li:first-of-type:nth-last-of-type(10) ~ li {
+	width: 10%;
+}
+
+li:first-of-type:nth-last-of-type(11),
+li:first-of-type:nth-last-of-type(11) ~ li {
+	width: 9.0909%;
+}
+
+li:first-of-type:nth-last-of-type(12),
+li:first-of-type:nth-last-of-type(12) ~ li {
+	width: 8.3333%;
+}
+*/
+
+
+
+
+

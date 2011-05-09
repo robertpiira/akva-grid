@@ -134,7 +134,9 @@ header h1 {
 	line-height: 1em;
 	padding-top: 44px;
 	font-size: 88px;
-	color: rgba(0,200,255,.3);
+	color: rgba(0,200,255,.4);
+	text-align: center;
+	text-shadow: 10px 5px 0 rgba(200,200,200,.3);
 }
 header p {
 	margin: 0;

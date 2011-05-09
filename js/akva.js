@@ -12,12 +12,13 @@ var akvaGrid =  function() {
     var defaults = {
     	cols: 12,
     	leading: 22,
-    	opacity: 5
+    	gutter: 0.9,
+    	opacity: 3
     };
     
     return {
     
-        init: function () {
+        init: function() {
             _this = this;
             
             this.populateValuesFromStorageOrDefaults();
@@ -36,10 +37,12 @@ var akvaGrid =  function() {
         buildGrid: function() { 
         
         	var opts = {
-			    	cols: $('#grid-size').val(),
-			    	leading: $('#line-size').val(),
-			    	opacity: $('#akva-opacity').val()
-			};
+		    	cols: $('#grid-size').val(),
+		    	leading: $('#line-size').val(),
+		    	gutter: $('#akva-gutter').val(),
+		    	opacity: $('#akva-opacity').val()
+			}
+			
 		
 			//Columns
 			var colMarkup = "";
@@ -55,14 +58,24 @@ var akvaGrid =  function() {
 				lineMarkup += '<li></li>';
 			}
 			
+			//Gutter
+			var gutterSize = '' + opts.gutter + '%';
+			
 			//Opacity
 			var opac = opts.opacity / 10;
 			$('#akva-grid').css('opacity',opac);			
 			
-			//
+			//Build the grid
 			$('.akva-baseline').html(lineMarkup);
 			$('.akva-cols').html(colMarkup);
 			$('.akva-baseline li').css('height',leading);	
+			$('.akva-cols li').each(function(){
+				$(this).css({
+					'margin-left': gutterSize,
+					'margin-right': gutterSize
+				});
+			});
+			
 		},
         
         gridHeight: function() {
@@ -93,15 +106,19 @@ var akvaGrid =  function() {
 		
 				$.each(data, function(i, obj) {
 					$('[name="' + obj.name + '"]').val(localStorage.getItem(obj.name));
-				});
-						
+				});			
 			} else {
-			
-				$('#grid-size').val(defaults.cols);
-			    $('#line-size').val(defaults.leading);
-			   	$('#akva-opacity').val(defaults.opacity);
-			
-			}
+				
+				var opts = {
+			    	cols: $('#grid-size').val(defaults.cols),
+			    	leading: $('#line-size').val(defaults.leading),
+			    	gutter: $('#akva-gutter').val(defaults.gutter),
+			    	opacity: $('#akva-opacity').val(defaults.opacity)
+				}
+				
+				_this.buildGrid()
+				
+			} 
 		}	
 		
 	}

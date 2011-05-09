@@ -75,7 +75,7 @@ var akvaGrid =  function() {
 			var $form = $('#akva-form');
 			var data = $form.serializeArray();
 		
-			localStorage.setItem("gridData", "nje");
+			localStorage.setItem("gridData", "true");
 	
 			$.each(data, function(i, obj) {
 				localStorage.setItem(obj.name, obj.value);
@@ -87,7 +87,7 @@ var akvaGrid =  function() {
 		
 			var $form = $('#akva-form');
 			
-			if (localStorage.getItem("gridData") == "nje") {
+			if (localStorage.getItem("gridData") == "true") {
 	
 				var data = $form.serializeArray();
 		

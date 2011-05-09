@@ -56,7 +56,6 @@ Pointers:
 body {
   font-size: 16px;
   font-family: serif;
-  padding: 0 20px;
 }
 
 p {
@@ -112,14 +111,14 @@ label {
 }
 
 .testcol-parent {
-	width: 960px;
+	width: 80%;
 	margin: 0 auto;
 	overflow: hidden;
 }
 .testcol {
 	width: 47.5%;
 	float: left;
-	padding: 0 1.3%;
+	padding: 0 1.3% 0 9.5%;
 }
 .testcol2 {
 	float: right;
@@ -127,15 +126,15 @@ label {
 	padding: 0 1.5% 0 0;
 }
 header {
-	display: none;
-	background: rgba(0,0,0,.2);
 	padding: 0 11% 22px;
 	margin-bottom: 22px;
 }
 header h1 {
 	margin: 0;
-	line-height: 22px;
+	line-height: 1em;
 	padding-top: 44px;
+	font-size: 88px;
+	color: rgba(0,200,255,.3);
 }
 header p {
 	margin: 0;
@@ -180,8 +179,7 @@ p cite {
 /* general */
 #akva-grid {
 	position: absolute;
-	min-width: 320px;
-	max-width: 968px;
+	width: 80%;
 	left: 0;
 	right: 0;
 	top: 0;

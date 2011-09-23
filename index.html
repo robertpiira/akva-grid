@@ -1,70 +1,81 @@
+
 <!DOCTYPE HTML>
 <html lang="en-US">
 <head>
 	<meta charset="UTF-8">
 	<title>akvaGrid 1.0</title>
-
+	
+	<!--<link rel="stylesheet" href="css/ingrid.css" />-->
 	<link rel="stylesheet" href="css/akva.css" />
-
+	<link rel="stylesheet" href="css/demo.css" />
 </head>
+
 <body>
 
-<header>
-	<h1>akva grid.</h1>
-</header>
-
-
-<div class="testcol-parent">
-
-
-<blockquote>
-<p class="h1">
-<b>Don't get set into one form, adapt it and build your own, and let it grow, be like water.</b> Empty your mind, be formless, shapeless — like water. Now you put water in a cup, it becomes the cup; You put water into a bottle it becomes the bottle; You put it in a teapot it becomes the teapot. Now water can flow or it can crash. <strong>Be water, my friend.</strong>
-</p>
-<p>
-<cite>&mdash; Bruce Lee</cite>
-</p>
-</blockquote>
-
-<div class="testcol">
-<h2>Akva grid</h2>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vel turpis mauris, faucibus consectetur elit. Curabitur tempus eros et sapien ornare sit amet ultricies mi lacinia. Sed mauris nibh, porta adipiscing pharetra id, porttitor quis nisl. Donec at enim ac lacus tincidunt condimentum. Mauris ante sem, congue sed fringilla id, dapibus eu arcu. Nulla sagittis pulvinar dui in condimentum.</p><p>Integer sit amet mi sit amet lacus iaculis convallis. Aliquam felis tellus, tempus vitae semper nec, fringilla a ante. Proin ultricies odio ut ligula tincidunt tempor. Fusce volutpat mi eu erat pharetra molestie ut vel augue. Etiam dapibus turpis vitae risus scelerisque at volutpat quam ullamcorper. Integer fringilla, mauris sed bibendum ornare, mauris quam euismod enim, in porta justo elit eu neque. Vivamus ac mauris nec dui malesuada commodo. Fusce egestas, risus a porta ultricies, leo ipsum dictum lorem, sed viverra mi nulla vitae libero. Vestibulum a arcu quis augue rutrum euismod. Nam gravida accumsan felis, et congue metus ultricies vel. Mauris nisi dui, dignissim vel ullamcorper </p>
-</div>
-<div class="testcol2">
-<h2>Side</h2>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vel turpis mauris, faucibus consectetur elit. Curabitur tempus eros et sapien ornare sit amet ultricies mi lacinia. Sed mauris nibh, porta adipiscing pharetra id, porttitor quis nisl. Donec at enim ac lacus tincidunt condimentum. Mauris ante sem, congue sed fringilla id, dapibus eu arcu. Nulla sagittis pulvinar dui in condimentum. Integer sit amet mi sit amet lacus iaculis convallis. Aliquam felis tellus, tempus vitae semper nec, fringilla a ante. Proin ultrtus ultricies vel. Mauris nisi dui, dignissim vel ullamcorper </p>
-</div>
-</div>
-
-
-<div id="akva-panel">
-	<form id="akva-form">
-		<label for="grid-size">cols</label>
-		<input id="grid-size" name="grid-size" type="number" min="0" max="16" maxlength="5" size="7">
-		<label for="line-size">leading</label>
-		<input id="line-size" name="line-size" type="number" min="0" maxlenght="5" size="7">
-		<label for="akva-gutter">gutter</label>
-		<input id="akva-gutter" name="akva-gutter" step="0.1" type="number" min="0" maxlenght="5" size="7">
-		<span>%</span>
-		<label for="akva-opacity">opacity</label>
-		<input id="akva-opacity" name="akva-opacity" type="range" min="0" max="10" maxlenght="5" size="3">
-	</form>
-</div>
+	<header>
+		<h1>akva grid.</h1>
+	</header>
+	
+	
+	<blockquote>
+		<p class="h1">
+			<span class="smaller">Don't get set into one form,</span> adapt it and build your own, and let it grow, <span class="bigger">be like water.</span> <span class="smaller">Empty your mind,</span> be formless, shapeless — like water. <span class="smaller">Now you put water in a cup,</span> it becomes the cup; You put water into a bottle it becomes the bottle; You put it in a teapot it becomes the teapot. <span class="smaller">Now water can flow</span> or it can crash. <span class="bigger">Be water, my friend.</span>
+		</p>
+		<p class="cite">
+			<cite>&mdash; Bruce Lee</cite>
+		</p>
+	</blockquote>
+	
+	<div class="testcol">
+		<h2>Akva grid</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vel turpis mauris, faucibus consectetur elit. Curabitur tempus eros et sapien ornare sit amet ultricies mi lacinia. Sed mauris nibh, porta adipiscing pharetra id, porttitor quis nisl. Donec at enim ac lacus tincidunt condimentum. Mauris ante sem, congue sed fringilla id, dapibus eu arcu. Nulla sagittis pulvinar dui in condimentum.</p><p>Integer sit amet mi sit amet lacus iaculis convallis. Aliquam felis tellus, tempus vitae semper nec, fringilla a ante. Proin ultricies odio ut ligula tincidunt tempor. Fusce volutpat mi eu erat pharetra molestie ut vel augue. Etiam dapibus turpis vitae risus scelerisque at volutpat quam ullamcorper. Integer fringilla, mauris sed bibendum ornare, mauris quam euismod enim, in porta justo elit eu neque. Vivamus ac mauris nec dui malesuada commodo. Fusce egestas, risus a porta ultricies, leo ipsum dictum lorem, sed viverra mi nulla vitae libero. Vestibulum a arcu quis augue rutrum euismod. Nam gravida accumsan felis, et congue metus ultricies vel. </p>
+	</div>
+	<div class="testcol2">
+		<h2>Side</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vel turpis mauris, faucibus consectetur elit. Curabitur tempus eros et sapien ornare sit amet ultricies mi lacinia. Sed mauris nibh, porta adipiscing pharetra id, porttitor quis nisl. Donec at enim ac lacus tincidunt condimentum. Mauris ante sem, congue sed fringilla id, dapibus eu arcu. Nulla sagittis pulvinar dui in condimentum.</p><p>Integer sit amet mi sit amet lacus iaculis convallis. Aliquam felis tellus, tempus vitae semper nec, fringilla a ante. Proin ultrtus ultricies vel. Mauris nisi dui, dignissim vel ullamcorper. </p>
+	</div>
+	
+	<footer class="the-end">
+		<p>Akva grid is built by <a href="http://www.piira.se">Robert Piira</a> with flexibility in mind.</p>
+	</footer>
+	
+		
 	
 	
 	
-
 	
 	
-<div id="akva-grid">	
-	<ul class="akva-cols parent-width"></ul>
-	<ul class="akva-baseline"></ul>
-</div>
-
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
-<script src="js/akva.js"></script>
-
-
-
+	<!-- This markup will be apart of akva.js -->
+	<div id="akva-panel">
+		<form id="akva-form">
+			<label for="grid-size">cols</label>
+			<input id="grid-size" name="grid-size" type="number" min="0" max="16" maxlength="5" size="7">
+			<label for="line-size">leading</label>
+			<input id="line-size" name="line-size" type="number" min="0" maxlenght="5" size="7">
+			<label for="akva-gutter">gutter</label>
+			<input id="akva-gutter" name="akva-gutter" step="0.1" type="number" min="0" maxlenght="5" size="7">
+			<span>%</span>
+			<label for="akva-opacity">opacity</label>
+			<input id="akva-opacity" name="akva-opacity" type="range" min="0" max="10" maxlenght="5" size="3">
+		</form>
+	</div>
+	<div id="akva-grid">	
+		<ul class="akva-cols parent-width"></ul>
+		<ul class="akva-baseline"></ul>
+	</div>
+	
+	
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+	<script src="js/akva.js"></script>
+	<script type="text/javascript">
+		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+	<script type="text/javascript">
+		try {
+		var pageTracker = _gat._getTracker("UA-8667817-1");
+		pageTracker._trackPageview();
+		} catch(err) {}
+	</script>
 </body>
 </html>

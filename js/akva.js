@@ -11,8 +11,8 @@ var akvaGrid =  function() {
     
     var defaults = {
     	cols: 12,
-    	leading: 22,
-    	gutter: 0.9,
+    	leading: 24,
+    	gutter: 1,
     	opacity: 3
     };
     
@@ -124,4 +124,4 @@ var akvaGrid =  function() {
 	}
 }();
 
-$(window).load(akvaGrid.init());
+$(document).ready(akvaGrid.init());

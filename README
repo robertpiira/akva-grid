@@ -1,13 +1,20 @@
-Akva Grid is (will be) a fluid grid overlay helper.
-There is an early demo version that I'm trying out on www.piira.se/akva-grid. Still lot's of fun work ahead!
+Akva Grid is (will be) a fluid grid overlay helper. Maybe in form of a marklet, or good ol' plugin to add to your project. 
+You can find an early demo version that I'm trying out on www.piira.se/akva-grid.
 
-As of now akva-grid is working nicely with the Chrome browser. This is mostly because I'm using the flexible box-model for the grid. Later on I might try CSS table-cell layout as a fallback for less capable browsers. 
 
-Other planned features are:
-* Set width (width, min-width, max-width)
-* Optional px or % units for the gutters
-* Customize the grid in steps with media queries. 
+
+TODO:
+
+Prio:
+* offset line-height
+* gutters units (px / %)
+* custom width, max-width, min-width
+* build grid controller form (and make it hidable)
+* Media query break points
 * Save favorite grid
 
-etc.
- 
+More:
+js/css - able to choose bg color on cols or the standard outlines. rgba(0, 50, 100, .2)
+
+Maybe:
+js - set color of grid lines

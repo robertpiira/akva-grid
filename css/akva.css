@@ -1,39 +1,23 @@
 @charset "UTF-8";
 
 /*
+akvaGrid css
+author: Robert Piira, @robertpiira
+url: piira.se
+*/
+
+/*
 
                                                                           
-             _/                              _/_/_/            _/        _/ *
+             _/                              _/_/_/            _/        _/ 
     _/_/_/  _/  _/  _/      _/    _/_/_/  _/        _/  _/_/        _/_/_/    
  _/    _/  _/_/    _/      _/  _/    _/  _/  _/_/  _/_/      _/  _/    _/     
 _/    _/  _/  _/    _/  _/    _/    _/  _/    _/  _/        _/  _/    _/      
  _/_/_/  _/    _/    _/        _/_/_/    _/_/_/  _/        _/    _/_/_/       
                                                                                                                   
 
----------------------------- *aquaGrid 1.0 -----------------------------
+---------------------------- aquaGrid 1.0 ----------------------------- */
 
-
-TODO:
-
-Prio:
-js - offset line-height
-js - gutters units (px / %)
-js - custom width, max-width, min-width
-js - build grid controller form (and make it hidable)
-js - mediaquery break points
-
-More:
-js/css - able to choose bg color on cols or the standard outlines. rgba(0, 50, 100, .2)
-
-Maybe:
-js - set color of grid lines
-
-Later: 
-css/html/js- browser support?
-
-------------------------------------------------------------------------
-
-*/
 
 
 

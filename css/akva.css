@@ -16,33 +16,20 @@ _/    _/  _/  _/    _/  _/    _/    _/  _/    _/  _/        _/  _/    _/
 TODO:
 
 Prio:
-js - input for dynamic line-height for basline grid
-js - input for size of gutters (px / %)
-js - fixing auto height issues
+js - offset line-height
+js - gutters units (px / %)
+js - custom width, max-width, min-width
 js - build grid controller form (and make it hidable)
+js - mediaquery break points
 
 More:
-js - set default grid/baseline values
-js - opacity via draggable input
-js - custom width, max-width, min-width
 js/css - able to choose bg color on cols or the standard outlines. rgba(0, 50, 100, .2)
 
 Maybe:
 js - set color of grid lines
 
-Wound be nice:
-css - height of grid to cover all content
-css/js - media query support
-
-Almost there:
-html5 - local storage (save settings)
-js - check document height and apply that to grid height
-
-Misc: 
+Later: 
 css/html/js- browser support?
-
-Pointers:
-- check out serializeArray for save settings etc.
 
 ------------------------------------------------------------------------
 
@@ -77,7 +64,7 @@ Pointers:
 }
 
 /* cols */
-.akva-cols {
+#akva-cols {
 	position: relative;
 	overflow: hidden;
 	position: absolute;
@@ -87,13 +74,13 @@ Pointers:
 	height: 100%;
 
 }
-.akva-cols li div {
+#akva-cols li div {
 	/*outline: 1px solid #7195bd;*/
 	background: rgba(0, 50, 100, .2);
 	margin: 0 4% -999999px;
 	padding-bottom: 999999px;
 }
-.akva-cols li {
+#akva-cols li {
 	opacity: 1;
 	margin: 0;
 	position: relative;
@@ -103,14 +90,14 @@ Pointers:
 }
 
 /* baseline */
-.akva-baseline {
+#akva-baseline {
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
 	overflow: hidden;
 }
-.akva-baseline li {
+#akva-baseline li {
 	border-bottom: 1px dotted #7195bd;
 }
 
@@ -134,13 +121,13 @@ label {
  * Grid
 ----------------------------*/
 
-.akva-cols { 
+#akva-cols { 
 
-	/* Table layout 
+	/* Table layout */
 	display:table;  
-	margin:0 auto; */
+	margin:0 auto; 
 	
-	/* Flexible box model */
+	/* Flexible box model 
 	display: -webkit-box;
 	display: -moz-box;
 	display: box;
@@ -149,20 +136,20 @@ label {
 	-moz-box-align: stretch;
 	-moz-box-orient: horizontal;
 	box-align: stretch;
-	box-orient: horizontal;
+	box-orient: horizontal;*/
 }
 
-.akva-cols li { 
+#akva-cols li { 
 
-	/* Table layout 
+	/* Table layout */
 	display: table-cell;
 	vertical-align: top;
-	padding: 0; */
+	padding: 0; 
 	
-	/* Flexible box model */
+	/* Flexible box model 
 	-webkit-box-flex: 1;
 	-moz-box-flex: 1;
-	box-flex: 1;
+	box-flex: 1;*/
 	
 	-moz-box-sizing:border-box;
 	-webkit-box-sizing:border-box;
@@ -170,7 +157,7 @@ label {
 	box-sizing:border-box;
 }
 
-.akva-cols li div {
+#akva-cols li div {
 	margin: 0;
 }
 

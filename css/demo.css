@@ -19,13 +19,12 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 /* These are some messy DEMO styles. no need to poke around here all that much :-) */
 
 body {
-	font-size: 100%;
-	color: #333;
-	background: #f4f8f9;
-	width: 92%;
-	max-width: 1020px;
+	color: #111;
+	background: #fff;
+	/*max-width: 1200px;*/
 	margin: 0 auto;
 	font-family: verdana, sans-serif;
+	-webkit-font-smoothing: antialiased;
 }
 
 /* typography */
@@ -46,7 +45,6 @@ h2 {
 	margin-top: 0.9231em;
 	margin-bottom: 0em;
 	font-weight: normal;
-	color: #005783;
 }
 .testcol2 p {
   font-size: 0.875em; /* 14px */
@@ -72,11 +70,11 @@ a:focus {
 .testcol {
 	width: 48%;
 	float: left;
-	padding: 0 1.3% 0 9.6%;
+	padding: 0 1.3% 0 9.3%;
 }
 .testcol2 {
 	float: right;
-	width: 23%;
+	width: 23.1%;
 	padding: 0 9.4% 0 0;
 }
 .testcol2 p {
@@ -88,21 +86,19 @@ a:focus {
 	margin: 0 0 1.3333em;
 }
 header {
-	padding: 0 11% 24px;
+	padding: 96px 11% 24px;
 }
 header h1 {
 	margin: 0;
 	line-height: 1em;
-	padding-top: 44px;
-	font-size: 82px;
-	color: rgba(0,200,255,.4);
+	font-size: 56px;
 	text-align: center;
-	text-shadow: 3px 3px 0 rgba(49,85,128,.3);
 }
 blockquote {
 	margin-bottom: 1.5em;
 	text-align: center;
 	font-style: italic;
+	font-family: Georgia, serif;
 }
 p img {
 	float: left;
@@ -110,18 +106,16 @@ p img {
 	margin: 0 10% 0 0;
 }
 blockquote p {
-	margin-left: 17.55%;
-	margin-right: 17.55%;
+	margin: 0.9231em 17.55% 0;
 	font-size: 1.625em; /* 26px */
 	line-height: 1.8462em; /* 48px */
-	margin-top: 0.9231em;
-	margin-bottom: 0em;
 }
 .cite {
 	text-align: right;
+	font-style: normal;
 	color: #666;
 	margin: 0 17.7% 0 0;
-	font-size: 1.125em; /* 18px */
+	font-size: 1em; /* 16px */
 	line-height: 1.3333em; /* 24px */
 }
 .smaller {
@@ -133,19 +127,14 @@ blockquote p {
 	line-height: 24px;
 }
 footer {
-	border-top: 1px solid #ddd;
 	margin: 0 9.3%;
+	padding-bottom: 2.2em;
 	clear: both;
 	color: #888;
 	font-family: 'Open Sans Condensed', arial, serif;
+	font-size: .85em;
 }
 footer p {
-	padding: 1.2em 0 0;
+	padding: 2em 0 0;
 	margin-bottom: 0;
-}
-footer:before {
-	content: "";
-	margin-top: 3px;
-	display: block;
-	border-top: 1px solid #ddd;
 }

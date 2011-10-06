@@ -29,15 +29,15 @@ _/    _/  _/  _/    _/  _/    _/    _/  _/    _/  _/        _/  _/    _/
 /* general */
 #akva-grid {
 	position: absolute;
-	width: 92%;
-	max-width: 1020px;
+	/*width: 92%;
+	max-width: 1020px;*/
 	left: 0;
 	right: 0;
 	top: 0;
 	bottom: 0;
 	margin: 0 auto;
 	z-index: -1;
-	outline: 1px solid #7195bd;
+	/*outline: 1px solid #7195bd;*/
 	overflow: hidden;
 }
 #akva-grid ul {
@@ -60,7 +60,7 @@ _/    _/  _/  _/    _/  _/    _/    _/  _/    _/  _/        _/  _/    _/
 }
 #akva-cols li div {
 	/*outline: 1px solid #7195bd;*/
-	background: rgba(0, 50, 100, .2);
+	background: rgba(130, 200, 255,.9);
 	margin: 0 4% -999999px;
 	padding-bottom: 999999px;
 }
@@ -80,25 +80,23 @@ _/    _/  _/  _/    _/  _/    _/    _/  _/    _/  _/        _/  _/    _/
 	left: 0;
 	width: 100%;
 	overflow: hidden;
+	z-index: 8889;
 }
 #akva-baseline li {
-	border-bottom: 1px dotted #7195bd;
+	border-bottom: 1px dotted rgb(63, 95, 110);
 }
 
 /* panel */
-#akva-panel {
-	position: absolute;
-	top: 0;
-	left: 0;
-	padding: 5px;
+.akva-panel {
+	font-size: 11px;
 }
 
 img,embed {
 	max-width: 100%;
 }
-label {
-	display: block;
-	font-size: .75em;
+.akva-panel label {
+	margin-right: .3em;
+	display: inline-block;
 }
 
 /*
@@ -146,4 +144,71 @@ label {
 }
 
 
+/*
+ * Elements
+----------------------------*/
+.akva-paneltoggle {
+	width: 20px;
+	height: 20px;
+	position: fixed;
+	top: 15px;
+	right: 15px;
+	z-index: 9999;
+	cursor: pointer;
+	background: rgb(10, 150, 200);
+	opacity: .4;
+	border: none;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	-webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    transition: all .5s ease;
+}
+.akva-paneltoggle:hover,
+.akva-paneltoggle:focus {
+	background: rgb(0,0,0);
+	opacity: 1;
+}
 
+.akva-panel {
+	width: 100%;
+	padding:0;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 9998;
+	/*background: rgba(255,255,255,.65);*/
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	box-sizing:border-box;
+}
+
+/* Form */
+#akva-form {
+	padding: 12px 50px 13px 15px;
+	border-bottom: 1px solid #CABEAF;
+	background: #FAF6EB;
+	color: #222;
+}
+#akva-form input {
+	margin-right: .8em;
+}
+#akva-form input[type="number"] {
+	padding: .3em;
+	width: 4em;
+}
+#akva-form input[type="range"] {
+	width: 6em;
+}
+
+
+/*
+ * Helpers
+----------------------------*/
+
+.akva-hidden {
+	display: none;
+}

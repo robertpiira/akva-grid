@@ -3,7 +3,7 @@
 <html lang="en-US">
 <head>
 	<meta charset="UTF-8">
-	<title>akvaGrid 1.0</title>
+	<title>akva grid</title>
 	
 	<!--<link rel="stylesheet" href="css/ingrid.css" />-->
 	<link rel="stylesheet" href="css/akva.css" />
@@ -13,16 +13,16 @@
 <body>
 
 	<header>
-		<h1>akva grid.</h1>
+		<h1>Akva grid</h1>
 	</header>
 	
 	
 	<blockquote>
 		<p class="h1">
-			<span class="smaller">Don't get set into one form,</span> adapt it and build your own, and let it grow, <span class="bigger">be like water.</span> <span class="smaller">Empty your mind,</span> be formless, shapeless — like water. <span class="smaller">Now you put water in a cup,</span> it becomes the cup; You put water into a bottle it becomes the bottle; You put it in a teapot it becomes the teapot. <span class="smaller">Now water can flow</span> or it can crash. <span class="bigger">Be water, my friend.</span>
+			<span class="smaller">Don't get set into one form,</span> adapt it and build your own, and let it grow, <span class="bigger">be like water.</span> <span class="smaller">Empty your mind,</span> be formless, shapeless — like water. <span class="smaller">Now you put water in a cup,</span> it becomes the cup; You put water into a bottle it becomes the bottle. <span class="smaller">Now water can flow</span> or it can crash. <span class="bigger">Be water, my friend.</span>
 		</p>
 		<p class="cite">
-			<cite>&mdash; Bruce Lee</cite>
+			<cite>Bruce Lee</cite>
 		</p>
 	</blockquote>
 	
@@ -36,7 +36,7 @@
 	</div>
 	
 	<footer class="the-end">
-		<p>Akva grid is built by <a href="http://www.piira.se">Robert Piira</a> with flexibility in mind.</p>
+		<p>Akva grid is built by <a href="http://www.piira.se">Robert Piira</a>.</p>
 	</footer>
 	
 		
@@ -46,17 +46,20 @@
 	
 	
 	<!-- This markup will be apart of akva.js -->
-	<div id="akva-panel">
+	<div id="akva-panel" class="akva-hidden">
 		<form id="akva-form">
-			<label for="grid-size">cols</label>
-			<input id="grid-size" name="grid-size" type="number" min="0" max="16" maxlength="5" size="7">
-			<label for="line-size">leading</label>
-			<input id="line-size" name="line-size" type="number" min="0" maxlenght="5" size="7">
-			<label for="akva-gutter">gutter</label>
-			<input id="akva-gutter" name="akva-gutter" step="0.1" type="number" min="0" maxlenght="5" size="7">
+			<label for="grid-size">Columns</label>
+			<input id="grid-size" name="cols" type="number" min="0" max="24" maxlength="5" size="7">
+			<label for="line-size">Leading</label>
+			<input id="line-size" name="leading" type="number" min="0" maxlenght="5" size="7">
+			<input type="checkbox" id="show-leading" checked />
+			<label for="akva-gutter">Gutter</label>
+			<input id="akva-gutter" name="gutter" step="0.1" type="number" min="0" maxlenght="5" size="7">
 			<span>%</span>
-			<label for="akva-opacity">opacity</label>
-			<input id="akva-opacity" name="akva-opacity" type="range" min="0" max="10" maxlenght="5" size="3">
+			<label for="akva-maxwidth">Max-width</label>
+			<input id="akva-maxwidth" name="maxwidth" type="number" min="0" size="3">
+			<label for="akva-opacity">Opacity</label>
+			<input id="akva-opacity" name="opacity" type="range" min="0" max="10" maxlenght="5" size="3">
 		</form>
 	</div>
 

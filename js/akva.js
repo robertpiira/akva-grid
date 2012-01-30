@@ -1,16 +1,12 @@
-/*
-
- _/                              _/_/_/            _/        _/
- _/_/_/  _/  _/  _/      _/    _/_/_/  _/        _/  _/_/        _/_/_/
- _/    _/  _/_/    _/      _/  _/    _/  _/  _/_/  _/_/      _/  _/    _/     
- _/    _/  _/  _/    _/  _/    _/    _/  _/    _/  _/        _/  _/    _/
- _/_/_/  _/    _/    _/        _/_/_/    _/_/_/  _/        _/    _/_/_/       
+     
 
 
- ---------------------------- akvaGrid 1.4 ----------------------------- */
-// akvaGrid js
+/* ---------------------------- akva-grid 1.4 ----------------------------- */
+
+// akva-grid js
 // author: Robert Piira (@robertpiira), Johan Garderud (@garberus)
 // url: piira.se/akva-grid
+
 
 var akva = function () {
     // scope variable
@@ -86,7 +82,7 @@ var akva = function () {
             // we're on our way
             this.panel.init();
             // initiate the resize listener
-            $('window').resize(this.resizeListener);
+            $(window).resize(this.resizeListener);
         },
         // function to merge one object into the other
         // @param obj1 	Object 	the object to be merged
@@ -350,13 +346,13 @@ var akva = function () {
             }
         },
         resizeListener: function () {
-            this.setMethod('resizeListener');
+            //this.setMethod('resizeListener');
             if (this.timer) {
                 clearTimeout(this.timer);
             }
             this.timer = setTimeout(function () {
                 //_this.checkBreakpoints();
-                this.grids.activeGrid.setGridHeight();
+                root.grids.activeGrid.setGridHeight();
             }, 100);
         }
     };

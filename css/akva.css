@@ -1,12 +1,6 @@
 @charset "UTF-8";
 
 /*
-akvaGrid css
-author: Robert Piira, @robertpiira
-url: piira.se
-*/
-
-/*
 
                                                                           
              _/                              _/_/_/            _/        _/ 
@@ -16,8 +10,12 @@ _/    _/  _/  _/    _/  _/    _/    _/  _/    _/  _/        _/  _/    _/
  _/_/_/  _/    _/    _/        _/_/_/    _/_/_/  _/        _/    _/_/_/       
                                                                                                                   
 
----------------------------- aquaGrid 1.0 ----------------------------- */
-
+---------------------------- aquaGrid 1.4 ----------------------------- */
+/*
+akvaGrid css
+author: Robert Piira, @robertpiira
+url: piira.se
+*/
 
 
 
@@ -27,20 +25,17 @@ _/    _/  _/  _/    _/  _/    _/    _/  _/    _/  _/        _/  _/    _/
 
 
 /* general */
-#akva-grid {
+.akva-grid {
 	position: absolute;
-	/*width: 92%;
-	max-width: 1020px;*/
 	left: 0;
 	right: 0;
 	top: 0;
 	bottom: 0;
 	margin: 0 auto;
 	z-index: -1;
-	/*outline: 1px solid #7195bd;*/
 	overflow: hidden;
 }
-#akva-grid ul {
+.akva-grid ul {
 	width: 100%;
 	margin: 0;
 	padding: 0;
@@ -48,7 +43,7 @@ _/    _/  _/  _/    _/  _/    _/    _/  _/    _/  _/        _/  _/    _/
 }
 
 /* cols */
-#akva-cols {
+.akva-cols {
 	position: relative;
 	overflow: hidden;
 	position: absolute;
@@ -58,13 +53,13 @@ _/    _/  _/  _/    _/  _/    _/    _/  _/    _/  _/        _/  _/    _/
 	height: 100%;
 
 }
-#akva-cols li div {
-	/*outline: 1px solid #7195bd;*/
+.akva-cols li div {
+	background: rgb(130, 200, 255);
 	background: rgba(130, 200, 255,.9);
 	margin: 0 4% -999999px;
 	padding-bottom: 999999px;
 }
-#akva-cols li {
+.akva-cols li {
 	opacity: 1;
 	margin: 0;
 	position: relative;
@@ -74,7 +69,7 @@ _/    _/  _/  _/    _/  _/    _/    _/  _/    _/  _/        _/  _/    _/
 }
 
 /* baseline */
-#akva-baseline {
+.akva-baseline {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -82,13 +77,16 @@ _/    _/  _/  _/    _/  _/    _/    _/  _/    _/  _/        _/  _/    _/
 	overflow: hidden;
 	z-index: 8889;
 }
-#akva-baseline li {
+.akva-baseline li {
 	border-bottom: 1px dotted rgb(63, 95, 110);
 }
 
 /* panel */
 .akva-panel {
 	font-size: 11px;
+	color: #333;
+	font-family: verdana, sans-serif;
+	-webkit-font-smoothing: antialiased;
 }
 
 img,embed {
@@ -103,43 +101,20 @@ img,embed {
  * Grid
 ----------------------------*/
 
-#akva-cols { 
-
-	/* Table layout */
-	display:table;  
-	margin:0 auto; 
-	
-	/* Flexible box model 
-	display: -webkit-box;
-	display: -moz-box;
-	display: box;
-	-webkit-box-align: stretch;
-	-webkit-box-orient: horizontal;
-	-moz-box-align: stretch;
-	-moz-box-orient: horizontal;
-	box-align: stretch;
-	box-orient: horizontal;*/
+.akva-cols {
+	display:table;
+	margin:0 auto;
 }
-
-#akva-cols li { 
-
-	/* Table layout */
+.akva-cols li {
 	display: table-cell;
 	vertical-align: top;
-	padding: 0; 
-	
-	/* Flexible box model 
-	-webkit-box-flex: 1;
-	-moz-box-flex: 1;
-	box-flex: 1;*/
-	
+	padding: 0;
 	-moz-box-sizing:border-box;
 	-webkit-box-sizing:border-box;
 	-ms-box-sizing:border-box;
 	box-sizing:border-box;
 }
-
-#akva-cols li div {
+.akva-cols li div {
 	margin: 0;
 }
 
@@ -151,7 +126,7 @@ img,embed {
 	width: 20px;
 	height: 20px;
 	position: fixed;
-	top: 15px;
+	bottom: 15px;
 	right: 15px;
 	z-index: 9999;
 	cursor: pointer;
@@ -162,9 +137,9 @@ img,embed {
 	-moz-border-radius: 10px;
 	border-radius: 10px;
 	-webkit-transition: all .5s ease;
-    -moz-transition: all .5s ease;
-    -o-transition: all .5s ease;
-    transition: all .5s ease;
+	-moz-transition: all .5s ease;
+	-o-transition: all .5s ease;
+	transition: all .5s ease;
 }
 .akva-paneltoggle:hover,
 .akva-paneltoggle:focus {
@@ -176,10 +151,9 @@ img,embed {
 	width: 100%;
 	padding:0;
 	position: fixed;
-	top: 0;
+	bottom: 0;
 	left: 0;
 	z-index: 9998;
-	/*background: rgba(255,255,255,.65);*/
 	-moz-box-sizing:border-box;
 	-webkit-box-sizing:border-box;
 	-ms-box-sizing:border-box;
@@ -189,26 +163,22 @@ img,embed {
 /* Form */
 #akva-form {
 	padding: 12px 50px 13px 15px;
-	border-bottom: 1px solid #CABEAF;
-	background: #FAF6EB;
+	border-top: 1px solid #CABEAF;
+	background: #FCF8DE;
 	color: #222;
 }
 #akva-form input {
 	margin-right: .8em;
 }
-#akva-form input[type="number"] {
+#akva-form input[type="number"],
+#akva-form input[type="breakpoint"] {
 	padding: .3em;
 	width: 4em;
 }
 #akva-form input[type="range"] {
 	width: 6em;
 }
-
-
-/*
- * Helpers
-----------------------------*/
-
-.akva-hidden {
-	display: none;
+.akva-unit {
+	margin: 0 .8em 0 -.2em;
+	color: #777;
 }

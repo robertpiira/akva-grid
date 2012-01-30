@@ -361,13 +361,6 @@ var akva = function () {
         }
     };
 }();
-// self detect and initiate with default settings
-akva.detect = function () {
-    if (window.location.hash.indexOf('#akva') > -1) {
-        akva.init();
-    }
-}();
-
 akva.debug = function (settings) {
     var defaults = {
         method: 'console',
@@ -539,5 +532,11 @@ akva.breakpoint.prototype = {
     }
     // TODO: finish breakpoint object
 };
+/*---------------------------- self-detect and initiate --------------------- */
+akva.detect = function () {
+    if (window.location.hash.indexOf('#akva') > -1) {
+        akva.init();
+    }
+}();
 
 

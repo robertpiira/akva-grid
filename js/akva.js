@@ -590,7 +590,7 @@ akva.breakpoint.prototype = {
             .append(
             $('<div>')
                 .attr('id', 'breakpoint-' + this.properties.pos)
-                .css('right', getScreenWidth - this.properties.pos + 'px')
+                .css('left', this.properties.pos + 'px')
                 .addClass('akva-breakpoint')
                 .data('position', this.properties.pos)
                 .click(function() {
@@ -604,11 +604,10 @@ akva.breakpoint.prototype = {
                 })
                 .append(
                 $('<div>')
-                    .css('left', this.properties.pos + 'px')
                     .addClass('akva-breakpoint-content')
                     .text(this.properties.pos + 'px')
-            )
-        );
+                )
+            );
         this.console.log('breakpoint generated');
     }
     // TODO: finish breakpoint object

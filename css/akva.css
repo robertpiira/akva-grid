@@ -191,15 +191,21 @@ url: piira.se
 
 .akva-breakpoint {
 	position: absolute;
+	width: 0;
 	z-index: -1;
 	top: 0;
-	line-height: 18px;
 	-webkit-transition: top .2s;
 	-moz-transition: top .2s;
 	-o-transition: top .2s;
 	-ms-transition: top .2s;
 	transition: top .2s;
-	color: #fff;
+}
+
+.akva-breakpoint-content {
+  line-height: 18px;
+  float: right;
+  background: #000;
+  color: #fff;
 	padding: 0 5px;
 	background: #000;
 	cursor: pointer;

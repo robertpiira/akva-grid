@@ -190,7 +190,7 @@ img,embed {
 	position: absolute;
 	z-index: 99;
 	top: 0;
-	border-left: 1px solid #333;
+	border-left: 2px solid #333;
 	padding-top: 20px;
 }
 .akva-breakpoint-content {

@@ -551,7 +551,8 @@ akva.breakpoint = function (settings) {
         name: 'default',
         debug: true,
         pos: null,
-        id: null
+        id: null,
+        remove: null
     };
     // we need jQuery here
     if (!jQuery) {

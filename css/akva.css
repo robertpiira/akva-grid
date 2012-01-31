@@ -182,3 +182,20 @@ img,embed {
 	margin: 0 .8em 0 -.2em;
 	color: #777;
 }
+
+/*
+ * Breakpoints
+----------------------------*/
+.akva-breakpoint {
+	position: absolute;
+	z-index: 99;
+	top: 0;
+	border-left: 1px solid #333;
+	padding-top: 20px;
+}
+.akva-breakpoint-content {
+	color: #fff;
+	cursor: pointer;
+	padding: 10px;
+	background-color: #333;
+}

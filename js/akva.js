@@ -16,7 +16,7 @@ var akva = function () {
         // debug flag
         debug: true,
         // flag to tell if dependencys are available locally
-        local: true,
+        local: false,
         // initiate akvaGrid with an optional settings object
         init: function (settings) {
             // set scope variable
@@ -274,6 +274,8 @@ var akva = function () {
         },
 
         breakpoints: {
+            // bucket to stick breakpoints in
+            instances: [],
 
             populate: function () {
                 root.setMethod('breakpoints.populate');
@@ -281,12 +283,45 @@ var akva = function () {
 
             persist: function () {
                 root.setMethod('breakpoints.persist');
+                // TODO: save breakpoints
             },
 
-            registerNew: function () {
+            registerNew: function (pos) {
                 root.setMethod('breakpoints.register');
-                root.console.log('New breakpoint!');
-                // TODO: add breakpoint functionality
+                var form = $('#' + root.settings.els.form),
+                    pos = form.find('input[name="breakpoint"]').val(),
+                    bp = null,
+                    l = this.instances.length;
+
+                if ((pos.length > 0) && !this.hasBreakpoint(pos)) {
+                    bp = new akva.breakpoint({ pos: pos, remove: this.removeBreakpoint, id: l });
+                    this.instances[l] = bp;
+                    root.console.log('breakpoint added: ', this.instances);
+                }
+            },
+            // makes sure we can't add multiple breakpoints in the same place
+            hasBreakpoint: function(value) {
+                var i = 0, l = this.instances.length;
+
+                for (; i<l; i++) {
+                    if (this.instances[i].properties.pos == value) {
+                        root.console.log('breakpoint at that coordinate already exists');
+                        return true;
+                    }
+                }
+                return false;
+            },
+            // removes a breakpoint from the list
+            removeBreakpoint: function(id) {
+                var i = 0, l = root.breakpoints.instances.length;
+
+                for (; i<l; i++) {
+                    if (root.breakpoints.instances[i].properties.id == id) {
+                        root.breakpoints.instances.splice(i, 1);
+                        root.console.log('breakpoint removed: ', root.breakpoints.instances);
+                        break;
+                    }
+                }
             }
         },
         // used by an object method to tell the console who's speaking
@@ -510,21 +545,57 @@ akva.grid.prototype = {
     }
 };
 /*---------------------------- breakpoint definition ------------------------ */
-akva.breakpoint = function () {
+akva.breakpoint = function (settings) {
     var defaults = {
         method: 'breakpoint',
-        debug: true
+        name: 'default',
+        debug: true,
+        pos: null,
+        id: null
     };
-
-    this.properties = settings ? settings : defaults;
+    // we need jQuery here
+    if (!jQuery) {
+        return;
+    }
+    this.properties = jQuery.extend(defaults, settings);
     this.init();
 };
 akva.breakpoint.prototype = {
     init: function () {
         this.console = new akva.debug({
             debug: this.properties.debug,
-            method: this.properties.name
+            method: 'breakpoint.instance.' + this.properties.id
         });
+        this.render();
+    },
+    // appends the new breakpoint
+    render: function() {
+        var _this = this;
+
+        $('body')
+            .append(
+            $('<div>')
+                .attr('id', 'breakpoint-' + this.properties.pos)
+                .css('left', this.properties.pos + 'px')
+                .addClass('akva-breakpoint')
+                .data('position', this.properties.pos)
+                .click(function() {
+                    // if a callback is registered on the main object, call it to
+                    // remove breakpoint from stack
+                    if (_this.properties.remove &&
+                        ('function' === typeof _this.properties.remove)) {
+                        _this.properties.remove(_this.properties.id);
+                    }
+                    $(this).remove();
+                })
+                .append(
+                $('<div>')
+                    .css('left', this.properties.pos + 'px')
+                    .addClass('akva-breakpoint-content')
+                    .text(this.properties.pos + 'px')
+            )
+        );
+        this.console.log('breakpoint generated');
     }
     // TODO: finish breakpoint object
 };

@@ -89,12 +89,14 @@ url: piira.se
 	-webkit-font-smoothing: antialiased;
 }
 
-img,embed {
-	max-width: 100%;
+.akva-input-wrap {
+  margin: .5em .2em;
+  display: inline-block;
+  width: 8em;
 }
-.akva-panel label {
-	margin-right: .3em;
-	display: inline-block;
+
+.akva-input-wrap label {
+	display: block !important;
 }
 
 /*
@@ -153,7 +155,7 @@ img,embed {
 	position: fixed;
 	bottom: 0;
 	left: 0;
-	z-index: 9998;
+	z-index: 9990;
 	-moz-box-sizing:border-box;
 	-webkit-box-sizing:border-box;
 	-ms-box-sizing:border-box;
@@ -162,7 +164,7 @@ img,embed {
 
 /* Form */
 #akva-form {
-	padding: 12px 50px 13px 15px;
+	padding: 3px 50px 4px 15px !important;
 	border-top: 1px solid #CABEAF;
 	background: #FCF8DE;
 	color: #222;
@@ -173,7 +175,7 @@ img,embed {
 #akva-form input[type="number"],
 #akva-form input[type="breakpoint"] {
 	padding: .3em;
-	width: 4em;
+	width: 3em !important;
 }
 #akva-form input[type="range"] {
 	width: 6em;
@@ -186,29 +188,36 @@ img,embed {
 /*
  * Breakpoints
 ----------------------------*/
+
 .akva-breakpoint {
 	position: absolute;
-	z-index: 99;
-	top: -17px;
+	z-index: -1;
+	top: 0;
 	line-height: 18px;
-}
-.akva-breakpoint-content {
+	-webkit-transition: top .2s;
+	-moz-transition: top .2s;
+	-o-transition: top .2s;
+	-ms-transition: top .2s;
+	transition: top .2s;
 	color: #fff;
-	cursor: pointer;
 	padding: 0 5px;
-	height: 18px;
-	background-color: #000;
+	background: #000;
+	cursor: pointer;
 }
 
 .akva-breakpoint:after {
   content: "";
   position: absolute;
-  top: -10px;
+  top: -15px;
   right: 0;
   bottom: auto;
   left: auto;
   border: 1px solid;
-  border-width: 10px 10px 0 0;
+  border-width: 15px 15px 0 0;
   border-color: transparent #000;
+}
+
+.akva-breakpoint:hover {
+  top: -17px;
 }
 

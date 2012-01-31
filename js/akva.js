@@ -126,16 +126,19 @@ var akva = function () {
                     panelWrapper = $('<div>').addClass('akva-panel').attr('id', root.settings.els.panel),
                     form = $('<form>').attr('id', root.settings.els.form),
                     l = root.panelInputs.length,
-                    i, el;
+                    i, el,inputWrap;
 
                 // build panel inputs based on settings in init
                 for (i = 0; i < l; i++) {
-                    form.append(
+                    var $inputWrap = $('<div />');
+                    
+                    $inputWrap.addClass('akva-input-wrap ' + root.panelInputs[i].id + '-wrap')
+                    .append(
                         $('<label>')
                             .attr('for', root.panelInputs[i].id)
                             .text(root.panelInputs[i].name)
-                    );
-                    form.append(
+                    )
+                    $inputWrap.append(
                         $('<input>')
                             .attr('id', root.panelInputs[i].id)
                             .attr('name', root.panelInputs[i].name)
@@ -146,7 +149,7 @@ var akva = function () {
                             .attr('placeholder', root.panelInputs[i].unit)
                     );
                     if (root.panelInputs[i].type == 'breakpoint') {
-                        form.append(
+                        $inputWrap.append(
                             $('<span>')
                                 .addClass('akva-unit')
                                 .css('cursor', 'pointer')
@@ -159,6 +162,7 @@ var akva = function () {
                             )
                         );
                     }
+                    $(form).append($inputWrap);
                 }
                 panelWrapper.append(form);
                 panelWrapper.hide();
@@ -190,8 +194,8 @@ var akva = function () {
                     }
                 });
                 // bind panel events in one go
-                panelWrapper.find('input[type="range"], input[type="number"]').bind('click keyup', function () {
-                    $(this).parent('form').trigger('formChange');
+                panelWrapper.find('div input[type="range"], div input[type="number"]').bind('click keyup', function () {
+                    $(this).parent().parent('form').trigger('formChange');
                 });
                 // insert toggle button and panel into the DOM
                 $('body').append(panelToggler);
@@ -579,13 +583,14 @@ akva.breakpoint.prototype = {
     },
     // appends the new breakpoint
     render: function() {
-        var _this = this;
+        var _this = this,
+            getScreenWidth = $(window).width();
 
         $('.akva-panel')
             .append(
             $('<div>')
                 .attr('id', 'breakpoint-' + this.properties.pos)
-                .css('left', this.properties.pos + 'px')
+                .css('right', getScreenWidth - this.properties.pos + 'px')
                 .addClass('akva-breakpoint')
                 .data('position', this.properties.pos)
                 .click(function() {

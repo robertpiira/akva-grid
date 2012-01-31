@@ -348,7 +348,7 @@ var akva = function () {
                 root.setMethod('storage.detectSession');
                 try {
                     return 'sessionStorage' in window && window['sessionStorage'] !== null;
-                    root.console.log('seission storage support detected');
+                    root.console.log('session storage support detected');
                 } catch (e) {
                     return false;
                 }

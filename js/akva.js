@@ -83,6 +83,8 @@ var akva = function () {
             this.panel.init();
             // initiate the resize listener
             $(window).resize(this.resizeListener);
+            // initiate the toggler 
+            $(document).keyup(this.toggle);
         },
         // function to merge one object into the other
         // @param obj1 	Object 	the object to be merged
@@ -389,6 +391,12 @@ var akva = function () {
                 //_this.checkBreakpoints();
                 root.grids.activeGrid.setGridHeight();
             }, 100);
+        },
+        toggle: function (e) { 
+            var $akvaEls = $('.akva-panel, .akva-paneltoggle, .akva-grid');
+            if (e.keyCode == 71) {
+                $akvaEls.toggle();
+            }
         }
     };
 }();
@@ -573,7 +581,7 @@ akva.breakpoint.prototype = {
     render: function() {
         var _this = this;
 
-        $('body')
+        $('.akva-panel')
             .append(
             $('<div>')
                 .attr('id', 'breakpoint-' + this.properties.pos)
@@ -605,6 +613,9 @@ akva.detect = function () {
     if (window.location.hash.indexOf('#akva') > -1) {
         akva.init();
     }
+    
 }();
+
+
 
 

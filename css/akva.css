@@ -189,13 +189,26 @@ img,embed {
 .akva-breakpoint {
 	position: absolute;
 	z-index: 99;
-	top: 0;
-	border-left: 2px solid #333;
-	padding-top: 20px;
+	top: -17px;
+	line-height: 18px;
 }
 .akva-breakpoint-content {
 	color: #fff;
 	cursor: pointer;
-	padding: 10px;
-	background-color: #333;
+	padding: 0 5px;
+	height: 18px;
+	background-color: #000;
 }
+
+.akva-breakpoint:after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  right: 0;
+  bottom: auto;
+  left: auto;
+  border: 1px solid;
+  border-width: 10px 10px 0 0;
+  border-color: transparent #000;
+}
+
